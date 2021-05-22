@@ -23,6 +23,10 @@ jobs:
       - name: Run build
         run: npm run build
 
+      - name: Make zip file
+        run: zip -qq -r ./$GITHUB_SHA.zip ./dist
+        shell: bash
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -32,7 +36,6 @@ jobs:
 
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://moinvi-deploy/moinvi/$GITHUB_SHA.zip
-        working-directory: ./dist
 
       # 실제로 코드를 배포한다.
       - name: Create CodeDeploy Deployment
