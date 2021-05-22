@@ -24,7 +24,7 @@ jobs:
           echo test, and deploy your project.
   continuous-deployment:
     runs-on: ubuntu-latest
-    needs: [continuous-integration]
+    needs: [build]
     if: github.ref == 'refs/heads/main'
     steps:
       # Step 1
