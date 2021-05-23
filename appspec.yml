@@ -3,12 +3,12 @@ os: linux
 files:
   - source: /
     destination: /home/moinvi/app
-hooks:
-  AfterInstall:
-    - location: deploy.sh
-      timeout: 60
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_server
-      timeout: 60
-      runas: root
+#hooks:
+#  AfterInstall:
+#    - location: deploy.sh
+#      timeout: 60
+#      runas: root
+#  ApplicationStart:
+#    - location: scripts/start_server
+#      timeout: 60
+#      runas: root
