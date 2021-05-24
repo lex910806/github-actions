@@ -1,1 +1,1 @@
-npm run start:prod
+npm i & npm run start:prod
